@@ -28,7 +28,6 @@ export default function Root() {
 	const { contacts, q } = useLoaderData()
 	const navigation = useNavigation()
 	const submit = useSubmit()
-
 	const searching =
 		navigation.location &&
 		new URLSearchParams(navigation.location.search).has('q')

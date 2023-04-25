@@ -6,6 +6,7 @@ export async function action({ request, params }) {
 	const updates = Object.fromEntries(formData)
 
 	await updateContact(params.contactId, updates)
+
 	return redirect(`/contacts/${params.contactId}`)
 }
 
