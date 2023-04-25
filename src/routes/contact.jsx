@@ -66,8 +66,7 @@ export default function Contact() {
 						action="destroy"
 						onSubmit={(event) => {
 							if (
-								// eslint-disable-next-line no-restricted-globals
-								!confirm(
+								!window.confirm(
 									'Please confirm you want to delete this record.'
 								)
 							) {
@@ -86,6 +85,7 @@ export default function Contact() {
 function Favorite({ contact }) {
 	const fetcher = useFetcher()
 	let favorite = contact.favorite
+
 	if (fetcher.formData) {
 		favorite = fetcher.formData.get('favorite') === 'true'
 	}
